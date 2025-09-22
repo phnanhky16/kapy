@@ -11,7 +11,7 @@ server:
 #    driver-class-name: com.mysql.cj.jdbc.Driver
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://<https://kapy.onrender.com>:5432/<mydb>}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://dpg-d38ido1r0fns7381gv70-a:5432/mydb_m3s1}
     username: ${SPRING_DATASOURCE_USERNAME:mydb_m3s1_user}
     password: ${SPRING_DATASOURCE_PASSWORD:xiRHsDco9Piu2dazo5hkuMQv7wFKguI7}
     driver-class-name: org.postgresql.Driver
