@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Email</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f4f4; font-family: 'Helvetica Neue', Arial, sans-serif;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f4f4f4; padding: 20px;">
+    <tr>
+        <td align="center">
+            <table role="presentation" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); border: 1px solid #e0e0e0;" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td style="padding: 20px 30px; text-align: center;">
+                        <!-- Logo -->
+                        <img src="https://yourdomain.com/images/logo.png" alt="Your Company Logo" style="max-width: 150px; height: auto; display: block; margin: 0 auto;">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0 30px 30px 30px;">
+                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td style="font-size: 24px; font-weight: bold; color: #1a2a44; text-align: left;">
+                                    Xin chào <span th:text="${name}">there</span> <span style="font-size: 24px;">👋</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top: 20px; font-size: 16px; color: #333333; line-height: 1.6; text-align: left;">
+                                    Cảm ơn bạn đã đăng ký tài khoản với hệ thống của chúng tôi.<br>
+                                    Chúng tôi rất vui khi có bạn đồng hành!
+                                </td>
+                            </tr>
+                            <!-- CTA Button -->
+                            <tr>
+                                <td style="padding-top: 20px; text-align: center;">
+                                    <a href="https://yourdomain.com" style="display: inline-block; padding: 12px 24px; background-color: #1a2a44; color: #ffffff; text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 4px;">Ghé thăm website của chúng tôi</a>
+                                </td>
+                            </tr>
+                            <!-- Social Media Links -->
+                            <tr>
+                                <td style="padding-top: 20px; text-align: center;">
+                                    <a href="https://facebook.com/yourpage"><img src="https://yourdomain.com/images/facebook-icon.png" alt="Facebook" style="width: 24px; height: 24px; margin: 0 5px;"></a>
+                                    <a href="https://twitter.com/yourpage"><img src="https://yourdomain.com/images/twitter-icon.png" alt="Twitter" style="width: 24px; height: 24px; margin: 0 5px;"></a>
+                                    <a href="https://instagram.com/yourpage"><img src="https://yourdomain.com/images/instagram-icon.png" alt="Instagram" style="width: 24px; height: 24px; margin: 0 5px;"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top: 30px; border-top: 1px solid #eeeeee;">
+                                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td style="font-size: 12px; color: #888888; text-align: center;">
+                                                Đây là email tự động. Vui lòng không trả lời email này.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

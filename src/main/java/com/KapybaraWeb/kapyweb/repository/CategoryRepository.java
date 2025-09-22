@@ -1,0 +1,7 @@
+package com.KapybaraWeb.kapyweb.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.KapybaraWeb.kapyweb.entity.Category;
+
+public interface CategoryRepository extends JpaRepository<Category, Long> {}
