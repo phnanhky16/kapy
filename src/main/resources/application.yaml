@@ -3,13 +3,26 @@ server:
 #  servlet:
 #    context-path: /kapyweb
 
+#spring:
+#  datasource:
+#    url: ${DBMS_CONNECTION}
+#    username: ${DBMS_USERNAME:root}
+#    password: ${DBMS_PASSWORD:docker}
+#    driver-class-name: com.mysql.cj.jdbc.Driver
 spring:
   datasource:
-    url: ${DBMS_CONNECTION}
-    username: ${DBMS_USERNAME:root}
-    password: ${DBMS_PASSWORD:docker}
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
 
+  jpa:
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update} # update cho dev, production nên dùng validate/migrate
+    show-sql: ${SPRING_JPA_SHOW_SQL:true}
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   mail:
     host: smtp.gmail.com
     port: 587
@@ -23,14 +36,14 @@ spring:
                    enable: true
                 ssl:
                   enable: false
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+#    database-platform: org.hibernate.dialect.MySQL8Dialect
 
 jwt:
   signerKey: "vF2Gndy26DaqK94eN4mWDPvQEatpbXuIuBOLcs+RM1C1mRvf8905iOVjpgtwg90D"
