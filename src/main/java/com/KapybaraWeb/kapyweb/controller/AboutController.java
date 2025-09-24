@@ -2,11 +2,12 @@ package com.KapybaraWeb.kapyweb.controller;
 
 import com.KapybaraWeb.kapyweb.dto.ApiResponse;
 import com.KapybaraWeb.kapyweb.dto.request.shop.AboutRequest;
-import com.KapybaraWeb.kapyweb.dto.response.flower.FlowerResponse;
 import com.KapybaraWeb.kapyweb.dto.response.shop.AboutResponse;
 import com.KapybaraWeb.kapyweb.service.shop.AboutService;
 import jakarta.validation.Valid;
+import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/about")
 @RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class AboutController {
     AboutService aboutService;
     @PostMapping("/create")
@@ -38,7 +40,7 @@ public class AboutController {
                 .build();
     }
     @GetMapping("/{id}")
-    public ApiResponse<AboutResponse> getAboutById(Long id){
+    public ApiResponse<AboutResponse> getAboutById(@PathVariable Long id){
         return ApiResponse.<AboutResponse>builder()
                 .success(true)
                 .message("About retrieved successfully")
@@ -54,7 +56,7 @@ public class AboutController {
                 .build();
     }
     @PutMapping("/active/{id}")
-    public ApiResponse<String> activeAbout(Long id){
+    public ApiResponse<String> activeAbout(@PathVariable Long id){
         return ApiResponse.<String>builder()
                 .success(true)
                 .message("About activated successfully")
@@ -62,7 +64,7 @@ public class AboutController {
                 .build();
     }
     @PatchMapping("/deactive/{id}")
-    public ApiResponse<String> deactiveAbout(Long id){
+    public ApiResponse<String> deactiveAbout(@PathVariable Long id){
         return ApiResponse.<String>builder()
                 .success(true)
                 .message("About deactivated successfully")
